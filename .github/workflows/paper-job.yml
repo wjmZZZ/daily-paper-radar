@@ -98,7 +98,7 @@ jobs:
         run: python scripts/cloud_state.py snapshot
       - name: 上传状态（包含待发日报及单篇缓存）
         if: always() && hashFiles('state/artifact/cloud.json') != ''
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: radar-state
           overwrite: true
@@ -107,7 +107,7 @@ jobs:
           if-no-files-found: error
       - name: 上传预览
         if: success() && inputs.operation == 'preview'
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: paper-preview
           overwrite: true
